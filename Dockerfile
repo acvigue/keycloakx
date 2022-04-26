@@ -2,6 +2,7 @@ FROM quay.io/keycloak/keycloak:latest as builder
 
 ENV KC_METRICS_ENABLED=true
 ENV KC_FEATURES=token-exchange,scripts,admin2
+ENV KC_DB=postgres
 RUN /opt/keycloak/bin/kc.sh build
 
 FROM quay.io/keycloak/keycloak:latest
